@@ -235,7 +235,7 @@
 	
 	$.fn.colorbox.position = function(mWidth, mHeight, speed, loadedCallback){
 		var winHeight = document.documentElement.clientHeight;
-		var posTop = winHeight/2 - mHeight/2;
+		var posTop = settings.top ? settings.top : winHeight/2 - mHeight/2;
 		var posLeft = document.documentElement.clientWidth/2 - mWidth/2;
 		//keeps the box from expanding to an inaccessible area offscreen.
 		if(mHeight > winHeight){posTop -=(mHeight - winHeight);}
@@ -543,7 +543,8 @@
 		slideshowAuto:true,
 		slideshowSpeed: 2500,
 		slideshowStart: "start slideshow",
-		slideshowStop: "stop slideshow"
+		slideshowStop: "stop slideshow",
+    top: undefined
 	};
 })(jQuery);
 
