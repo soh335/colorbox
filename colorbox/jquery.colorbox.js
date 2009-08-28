@@ -234,7 +234,7 @@
 	};
 	
 	$.fn.colorbox.position = function(mWidth, mHeight, speed, loadedCallback){
-		var winHeight = document.documentElement.clientHeight;
+    var winHeight = $window.height();
 		var posTop = settings.top ? settings.top : winHeight/2 - mHeight/2;
 		var posLeft = document.documentElement.clientWidth/2 - mWidth/2;
 		//keeps the box from expanding to an inaccessible area offscreen.
