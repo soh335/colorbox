@@ -422,7 +422,10 @@
 		
 		var href = settings.href;
 		
-		if (settings.inline) {
+    if (settings.content) {
+      var t = $('<div />').append($(settings.content));
+      $.fn.colorbox.dimensions(t);
+    } else if (settings.inline) {
 			$('<div id="cboxInlineTemp" />').hide().insertBefore($(href)[0]);
 			$.fn.colorbox.dimensions($(href).wrapAll('<div/>').parent());
 		} else if (settings.iframe) {
@@ -544,7 +547,8 @@
 		slideshowSpeed: 2500,
 		slideshowStart: "start slideshow",
 		slideshowStop: "stop slideshow",
-    top: undefined
+    top: undefined,
+    content: undefined
 	};
 })(jQuery);
 
